@@ -223,7 +223,7 @@
             position: relative;
             width: 290px;
             height: 290px;
-            border-radius: 50%; /* إطار دائري بالكامل */
+            border-radius: 50%;
             padding: 6px;
             background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
             box-shadow: 0 0 35px rgba(0, 242, 254, 0.3);
@@ -234,11 +234,10 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 50%; /* الصورة دائرية */
+            border-radius: 50%;
             border: 4px solid var(--bg-deep);
         }
 
-        /* خطوط تقنية متوهجة تلف حول الصورة بشكل مستمر */
         .pulsing-line {
             position: absolute;
             top: -12px; left: -12px; right: -12px; bottom: -12px;
@@ -258,48 +257,11 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* خطوط متوهجة نيون متحركة للأقسام (Glowing Borders Animation) */
+        /* خطوط متوهجة نيون متحركة للأقسام */
         @keyframes borderGlowLoop {
             0% { border-color: rgba(0, 242, 254, 0.2); box-shadow: 0 0 5px rgba(0, 242, 254, 0.05); }
             50% { border-color: rgba(155, 81, 224, 0.6); box-shadow: 0 0 15px rgba(155, 81, 224, 0.2); }
             100% { border-color: rgba(0, 242, 254, 0.2); box-shadow: 0 0 5px rgba(0, 242, 254, 0.05); }
-        }
-
-        /* قسم لوحة مراقبة السيرفر */
-        .monitor-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-        }
-
-        .monitor-card {
-            background: var(--bg-surface);
-            border: 1px solid rgba(0, 242, 254, 0.2);
-            border-radius: 12px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            animation: borderGlowLoop 5s infinite ease-in-out;
-        }
-
-        .monitor-card i {
-            font-size: 24px;
-            color: var(--accent-cyan);
-            text-shadow: var(--cyber-glow);
-        }
-
-        .monitor-data h5 {
-            font-size: 12px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-        }
-
-        .monitor-data p {
-            font-size: 18px;
-            font-weight: 700;
-            margin-top: 2px;
         }
 
         /* الأقسام العامة */
@@ -323,7 +285,64 @@
             text-shadow: var(--cyber-glow);
         }
 
-        /* قسم الخدمات مع خطوط متوهجة عند التمرير */
+        /* قسم عني الجديد الطويل جداً والمفصل (Advanced Bio Panel) */
+        .bio-panel {
+            background: var(--bg-surface);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: borderGlowLoop 6s infinite ease-in-out;
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 25px;
+        }
+
+        .bio-text-block h3 {
+            font-size: 18px;
+            color: var(--accent-cyan);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bio-text-block p {
+            color: #cbd5e1;
+            font-size: 14.5px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .bio-details-list {
+            list-style: none;
+        }
+
+        .bio-details-list li {
+            margin-bottom: 15px;
+            font-size: 14.5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #94a3b8;
+        }
+
+        .bio-details-list li strong {
+            color: var(--text-main);
+            min-width: 100px;
+            display: inline-block;
+        }
+
+        .bio-details-list li i {
+            color: var(--accent-purple);
+            text-shadow: 0 0 5px var(--accent-purple);
+        }
+
+        /* قسم الخدمات */
         .grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -357,7 +376,7 @@
             line-height: 1.6;
         }
 
-        /* قسم المهارات المتقدمة ونسب توهجها (Core Stack) */
+        /* قسم المهارات المتقدمة */
         .skills-section-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -399,7 +418,7 @@
             box-shadow: 0 0 12px var(--accent-cyan);
         }
 
-        /* إضافات جديدة جداً: قسم صندوق الأدوات البرمجية (Wizzy's Toolkit) */
+        /* صندوق الأدوات البرمجية */
         .toolkit-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -431,7 +450,7 @@
             color: var(--accent-cyan);
         }
 
-        /* قسم لوحة المشاريع (Terminal) خطوط نيون ثابتة ومتوهجة */
+        /* قسم لوحة المشاريع Terminal */
         .terminal-box {
             background: #020409;
             border: 2px solid var(--accent-cyan);
@@ -481,7 +500,7 @@
             box-shadow: var(--cyber-glow);
         }
 
-        /* السجل الزمني المضاف (Timeline Log) */
+        /* السجل الزمني المضاف */
         .timeline-container {
             position: relative;
             padding-right: 20px;
@@ -534,6 +553,7 @@
             .image-frame { width: 230px; height: 230px; }
             .action-zone { justify-content: center; }
             .project-row { flex-direction: column; gap: 10px; text-align: center; }
+            .bio-grid { grid-template-columns: 1fr; gap: 25px; }
         }
     </style>
 </head>
@@ -549,6 +569,7 @@
             </div>
             <nav>
                 <a href="#about">الرئيسية</a>
+                <a href="#bio">عني</a>
                 <a href="#services">الخدمات</a>
                 <a href="#skills">القدرات</a>
                 <a href="#projects">المشاريع</a>
@@ -565,7 +586,7 @@
             <p>مطور برمجيات وأنظمة سيبرانية متخصص في هندسة وبناء أدوات الأتمتة الذكية، وتطوير البوتات المخصصة، وتصميم واجهات الويب الرقمية المتقدمة لتقديم تجربة استخدام فائقة الأداء والتكامل.</p>
             
             <div class="action-zone">
-                <a href="https://wa.me/249128749239?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%88%D9%8A%D8%B2%D9%8A%D8%8C%20%D9%84%D9%82%D8%AF%20%D8%B2%D8%B1%D8%AA%20%D9%85%D9%82%D8%B1%D9%83%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8I%20%D9%88%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D2%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%83" target="_blank" class="btn-small btn-whatsapp">
+                <a href="https://wa.me/249128749239?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%88%D9%8A%D8%B2%D9%8A%D8%8C%20%D9%84%D9%82%D8%AF%20%D8%B2%D8%B1%D8%AA%20%D9%85%D9%82%D8%B1%D9%83%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8I%20%D9%88%D8%A3%D9%8ء%D9%88%D8%AF%20%D8%A7%D9%84%D2%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%83" target="_blank" class="btn-small btn-whatsapp">
                     <i class="fab fa-whatsapp"></i> واتساب
                 </a>
                 <a href="mailto:ffjjddsskkjj78@gmail.com" class="btn-small btn-email">
@@ -585,26 +606,36 @@
         </div>
     </section>
 
-    <div class="container">
-        <div class="monitor-grid">
-            <div class="monitor-card">
-                <i class="fas fa-server"></i>
-                <div class="monitor-data"><h5>حالة الخادم</h5><p style="color: #22c55e; text-shadow: 0 0 10px #22c55e;">ONLINE</p></div>
+    <section class="section-space" id="bio">
+        <div class="container">
+            <div class="block-title">
+                <h2>الملف <span>التعريفي والشخصي</span></h2>
             </div>
-            <div class="monitor-card">
-                <i class="fas fa-microchip"></i>
-                <div class="monitor-data"><h5>استهلاك الـ CPU</h5><p>1.24%</p></div>
-            </div>
-            <div class="monitor-card">
-                <i class="fas fa-users"></i>
-                <div class="monitor-data"><h5>الطلبات النشطة</h5><p>+4.8K / س</p></div>
-            </div>
-            <div class="monitor-card">
-                <i class="fas fa-folder-open"></i>
-                <div class="monitor-data"><h5>المستودعات</h5><p>مزامنة كاملة</p></div>
+            <div class="bio-panel">
+                <div class="bio-grid">
+                    <div class="bio-text-block">
+                        <h3><i class="fas fa-user-tag"></i> من هو محمد عادل؟</h3>
+                        <p>
+                            أنا شغوف بعالم البرمجيات والتقنيات الحديثة، تخصصت في هندسة الأتمتة البرمجية وبناء الخلفيات البرمجية الذكية (Backend Processing). أقضي معظم وقتي في تحليل الأنظمة، وتحويل العمليات المعقدة والروتينية إلى أدوات ذكية وبوتات تعمل بشكل تلقائي وبأعلى كفاءة ممكنة. 
+                        </p>
+                        <p style="margin-top: 15px;">
+                            أؤمن بأن التكنولوجيا وجدت لتسهيل حياة الأفراد وأصحاب المشاريع، ولذلك أركز دائماً على تقديم حلول مرنة، مستقرة، ومبنية على أكواد نظيفة (Clean Code) يسهل تطويرها مستقبلاً، مع دمج اللمسات البصرية المتطورة لضمان واجهة مستخدم تترك انطباعاً تقنياً قوياً.
+                        </p>
+                    </div>
+                    <div>
+                        <h3><i class="fas fa-fingerprint"></i> البيانات الهيكلية للمطور</h3>
+                        <ul class="bio-details-list" style="margin-top: 12px;">
+                            <li><i class="fas fa-code-branch"></i> <strong>اللقب التقني:</strong> Wizzy / ويزي</li>
+                            <li><i class="fas fa-laptop-code"></i> <strong>التخصص الأساسي:</strong> Automation & Web Dev</li>
+                            <li><i class="fas fa-brain"></i> <strong>الاهتمامات الحالية:</strong> APIs Integrations & Data Processing</li>
+                            <li><i class="fas fa-headset"></i> <strong>حالة العمل الحر:</strong> متاح للمشاريع البرمجية المخصصة</li>
+                            <li><i class="fas fa-shield-alt"></i> <strong>بيئة النظام:</strong> Linux/Termux Core Environment</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <section class="section-space" id="services">
         <div class="container">
