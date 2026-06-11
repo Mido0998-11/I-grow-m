@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>محمد عادل (Wizzy) | الملف الشخصي المتكامل</title>
+    <title>محمد عادل (Wizzy) | الملف الشخصي السيبراني المتكامل</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-deep: #040712;
-            --bg-surface: #0a0f1d;
-            --bg-card: #0f172a;
+            --bg-deep: #03060f;
+            --bg-surface: #070c18;
+            --bg-card: #0c1324;
             --accent-cyan: #00f2fe;
             --accent-purple: #9b51e0;
             --text-main: #f8fafc;
             --text-muted: #64748b;
             --whatsapp-green: #25d366;
+            --cyber-glow: 0 0 15px rgba(0, 242, 254, 0.4);
         }
 
         * {
@@ -29,17 +30,30 @@
             background-color: var(--bg-deep);
             color: var(--text-main);
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(rgba(0, 242, 254, 0.04) 1px, transparent 0),
-                radial-gradient(rgba(155, 81, 224, 0.04) 1px, transparent 0);
-            background-size: 30px 30px;
+            position: relative;
+        }
+
+        /* تأثير سقوط أكواد الهكر الخفيف في الخلفية */
+        body::before {
+            content: "10 01 11 00 10 10 01 11 00 01 10 11 00 10 01 11 10 01 11 00 10 10 01 11";
+            position: fixed;
+            font-family: monospace;
+            font-size: 14px;
+            color: rgba(0, 242, 254, 0.02);
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            word-wrap: break-word;
+            line-height: 30px;
+            z-index: -2;
+            padding: 10px;
+            overflow: hidden;
         }
 
         .glow-sphere {
             position: absolute;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(0,242,254,0.06) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(0,242,254,0.07) 0%, rgba(155,81,224,0.03) 50%, rgba(0,0,0,0) 70%);
             filter: blur(90px);
             z-index: -1;
         }
@@ -53,8 +67,9 @@
         /* الهيدر */
         header {
             backdrop-filter: blur(20px);
-            background: rgba(4, 7, 18, 0.85);
-            border-bottom: 1px solid rgba(0, 242, 254, 0.08);
+            background: rgba(3, 6, 15, 0.85);
+            border-bottom: 1px solid rgba(0, 242, 254, 0.15);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.05);
             padding: 15px 0;
             position: sticky;
             top: 0;
@@ -77,6 +92,7 @@
             background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
         }
 
         nav a {
@@ -90,6 +106,7 @@
 
         nav a:hover {
             color: var(--accent-cyan);
+            text-shadow: var(--cyber-glow);
         }
 
         /* الواجهة الرئيسية الجانبية */
@@ -112,7 +129,7 @@
             background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(0, 242, 254, 0.1);
+            text-shadow: 0 0 25px rgba(0, 242, 254, 0.3);
         }
 
         .hero-content .subtitle {
@@ -124,6 +141,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            text-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
         }
 
         .hero-content p {
@@ -157,7 +175,7 @@
 
         .btn-whatsapp {
             background: rgba(37, 211, 102, 0.08);
-            border-color: rgba(37, 211, 102, 0.3);
+            border-color: rgba(37, 211, 102, 0.4);
             color: var(--whatsapp-green);
         }
 
@@ -165,12 +183,12 @@
             background: var(--whatsapp-green);
             color: #000;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
         }
 
         .btn-email {
             background: rgba(0, 242, 254, 0.05);
-            border-color: rgba(0, 242, 254, 0.2);
+            border-color: rgba(0, 242, 254, 0.3);
             color: var(--accent-cyan);
         }
 
@@ -178,12 +196,12 @@
             background: var(--accent-cyan);
             color: #000;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
+            box-shadow: var(--cyber-glow);
         }
 
         .btn-github {
             background: rgba(255, 255, 255, 0.03);
-            border-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.15);
             color: #f8fafc;
         }
 
@@ -191,9 +209,10 @@
             background: #fff;
             color: #000;
             transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
         }
 
-        /* تنسيق الصورة المتوهجة */
+        /* تنسيق الصورة بالإطار الدائري الفخم المتوهج والمتحرك */
         .hero-visual {
             display: flex;
             justify-content: center;
@@ -202,12 +221,12 @@
 
         .image-frame {
             position: relative;
-            width: 300px;
-            height: 300px;
-            border-radius: 24px;
-            padding: 5px;
+            width: 290px;
+            height: 290px;
+            border-radius: 50%; /* إطار دائري بالكامل */
+            padding: 6px;
             background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-            box-shadow: 0 0 30px rgba(0, 242, 254, 0.15);
+            box-shadow: 0 0 35px rgba(0, 242, 254, 0.3);
             animation: breatheAnimation 4s ease-in-out infinite alternate;
         }
 
@@ -215,24 +234,38 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 20px;
-            border: 3px solid var(--bg-deep);
+            border-radius: 50%; /* الصورة دائرية */
+            border: 4px solid var(--bg-deep);
         }
 
+        /* خطوط تقنية متوهجة تلف حول الصورة بشكل مستمر */
         .pulsing-line {
             position: absolute;
-            top: -10px; left: -10px; right: -10px; bottom: -10px;
-            border: 1.5px dashed rgba(0, 242, 254, 0.2);
-            border-radius: 32px;
+            top: -12px; left: -12px; right: -12px; bottom: -12px;
+            border: 2px dashed var(--accent-cyan);
+            border-radius: 50%;
             pointer-events: none;
+            box-shadow: 0 0 12px rgba(0, 242, 254, 0.2);
+            animation: rotateLines 25s linear infinite;
         }
 
         @keyframes breatheAnimation {
-            0% { transform: translateY(0); box-shadow: 0 0 20px rgba(0, 242, 254, 0.15); }
-            100% { transform: translateY(-8px); box-shadow: 0 0 40px rgba(0, 242, 254, 0.35); }
+            0% { transform: translateY(0) scale(1); box-shadow: 0 0 25px rgba(0, 242, 254, 0.2); }
+            100% { transform: translateY(-10px) scale(1.02); box-shadow: 0 0 50px rgba(0, 242, 254, 0.5); }
         }
 
-        /* قسم لوحة مراقبة السيرفر المضافة (System Monitor) */
+        @keyframes rotateLines {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* خطوط متوهجة نيون متحركة للأقسام (Glowing Borders Animation) */
+        @keyframes borderGlowLoop {
+            0% { border-color: rgba(0, 242, 254, 0.2); box-shadow: 0 0 5px rgba(0, 242, 254, 0.05); }
+            50% { border-color: rgba(155, 81, 224, 0.6); box-shadow: 0 0 15px rgba(155, 81, 224, 0.2); }
+            100% { border-color: rgba(0, 242, 254, 0.2); box-shadow: 0 0 5px rgba(0, 242, 254, 0.05); }
+        }
+
+        /* قسم لوحة مراقبة السيرفر */
         .monitor-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -242,17 +275,19 @@
 
         .monitor-card {
             background: var(--bg-surface);
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 242, 254, 0.2);
             border-radius: 12px;
             padding: 20px;
             display: flex;
             align-items: center;
             gap: 15px;
+            animation: borderGlowLoop 5s infinite ease-in-out;
         }
 
         .monitor-card i {
             font-size: 24px;
             color: var(--accent-cyan);
+            text-shadow: var(--cyber-glow);
         }
 
         .monitor-data h5 {
@@ -270,7 +305,7 @@
         /* الأقسام العامة */
         .section-space {
             padding: 70px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(0, 242, 254, 0.1);
         }
 
         .block-title {
@@ -285,9 +320,10 @@
 
         .block-title h2 span {
             color: var(--accent-cyan);
+            text-shadow: var(--cyber-glow);
         }
 
-        /* قسم الخدمات */
+        /* قسم الخدمات مع خطوط متوهجة عند التمرير */
         .grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -300,11 +336,19 @@
             border-radius: 16px;
             padding: 30px;
             position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .service-panel:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+            transform: translateY(-4px);
         }
 
         .service-panel h3 {
             font-size: 20px;
             margin-bottom: 12px;
+            color: var(--accent-cyan);
         }
 
         .service-panel p {
@@ -325,6 +369,11 @@
             padding: 20px;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.02);
+            transition: border-color 0.3s;
+        }
+
+        .skill-progress-box:hover {
+            border-color: var(--accent-purple);
         }
 
         .skill-info-title {
@@ -347,13 +396,46 @@
             height: 100%;
             background: linear-gradient(90deg, var(--accent-purple), var(--accent-cyan));
             border-radius: 10px;
-            box-shadow: 0 0 10px var(--accent-cyan);
+            box-shadow: 0 0 12px var(--accent-cyan);
         }
 
-        /* قسم لوحة المشاريع (Terminal) */
+        /* إضافات جديدة جداً: قسم صندوق الأدوات البرمجية (Wizzy's Toolkit) */
+        .toolkit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tool-card {
+            background: rgba(10, 15, 29, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 13.5px;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card i {
+            font-size: 24px;
+            display: block;
+            margin-bottom: 8px;
+            color: var(--accent-purple);
+        }
+
+        .tool-card:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
+            color: var(--accent-cyan);
+        }
+
+        /* قسم لوحة المشاريع (Terminal) خطوط نيون ثابتة ومتوهجة */
         .terminal-box {
             background: #020409;
-            border: 1px solid rgba(0, 242, 254, 0.1);
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.2);
             border-radius: 12px;
             overflow: hidden;
         }
@@ -363,7 +445,7 @@
             padding: 12px 20px;
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(0, 242, 254, 0.2);
         }
 
         .window-dots { display: flex; gap: 6px; }
@@ -390,13 +472,20 @@
             border: 1px solid var(--accent-cyan);
             padding: 5px 12px;
             border-radius: 6px;
+            box-shadow: 0 0 5px rgba(0, 242, 254, 0.1);
+        }
+
+        .project-row a:hover {
+            background: var(--accent-cyan);
+            color: #000;
+            box-shadow: var(--cyber-glow);
         }
 
         /* السجل الزمني المضاف (Timeline Log) */
         .timeline-container {
             position: relative;
             padding-right: 20px;
-            border-right: 2px solid rgba(0, 242, 254, 0.1);
+            border-right: 2px solid rgba(0, 242, 254, 0.2);
         }
 
         .timeline-item {
@@ -411,7 +500,7 @@
             width: 10px; height: 10px;
             background: var(--accent-cyan);
             border-radius: 50%;
-            box-shadow: 0 0 8px var(--accent-cyan);
+            box-shadow: 0 0 10px var(--accent-cyan);
         }
 
         .timeline-meta {
@@ -425,8 +514,9 @@
 
         /* شريط النظام */
         .system-status-bar {
-            background: #070b14;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            background: #050811;
+            border-top: 1px solid rgba(0, 242, 254, 0.2);
+            box-shadow: 0 -5px 15px rgba(0, 242, 254, 0.05);
             padding: 10px 0;
             font-size: 12px;
             color: #475569;
@@ -436,12 +526,12 @@
         .pulse-indicator { width: 6px; height: 6px; background: #22c55e; border-radius: 50%; animation: pulseActive 1.5s infinite; }
         @keyframes pulseActive { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 
-        footer { padding: 25px 0; text-align: center; font-size: 13px; color: var(--text-muted); background: #03050b; }
+        footer { padding: 25px 0; text-align: center; font-size: 13px; color: var(--text-muted); background: #020409; border-top: 1px solid rgba(255, 255, 255, 0.02); }
 
         @media (max-width: 900px) {
             .hero-section { grid-template-columns: 1fr; text-align: center; }
             .hero-visual { grid-row: 1; }
-            .image-frame { width: 240px; height: 240px; }
+            .image-frame { width: 230px; height: 230px; }
             .action-zone { justify-content: center; }
             .project-row { flex-direction: column; gap: 10px; text-align: center; }
         }
@@ -475,7 +565,7 @@
             <p>مطور برمجيات وأنظمة سيبرانية متخصص في هندسة وبناء أدوات الأتمتة الذكية، وتطوير البوتات المخصصة، وتصميم واجهات الويب الرقمية المتقدمة لتقديم تجربة استخدام فائقة الأداء والتكامل.</p>
             
             <div class="action-zone">
-                <a href="https://wa.me/249128749239?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%88%D9%8A%D8%B2%D9%8A%D8%8C%20%D9%84%D9%82%D8%AF%20%D8%B2%D8%B1%D8%AA%20%D9%85%D9%88%D9%82%D8%B9%D9%83%20%D8%A7%D9%84%D8%B4%D8%AE%D8%B5%D9%8A%20%D9%8...%22" target="_blank" class="btn-small btn-whatsapp">
+                <a href="https://wa.me/249128749239?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%88%D9%8A%D8%B2%D9%8A%D8%8C%20%D9%84%D9%82%D8%AF%20%D8%B2%D8%B1%D8%AA%20%D9%85%D9%82%D8%B1%D9%83%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8I%20%D9%88%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D2%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%83" target="_blank" class="btn-small btn-whatsapp">
                     <i class="fab fa-whatsapp"></i> واتساب
                 </a>
                 <a href="mailto:ffjjddsskkjj78@gmail.com" class="btn-small btn-email">
@@ -499,7 +589,7 @@
         <div class="monitor-grid">
             <div class="monitor-card">
                 <i class="fas fa-server"></i>
-                <div class="monitor-data"><h5>حالة الخادم</h5><p style="color: #22c55e;">ONLINE</p></div>
+                <div class="monitor-data"><h5>حالة الخادم</h5><p style="color: #22c55e; text-shadow: 0 0 10px #22c55e;">ONLINE</p></div>
             </div>
             <div class="monitor-card">
                 <i class="fas fa-microchip"></i>
@@ -561,6 +651,14 @@
                     <div class="bar-container"><div class="bar-fill" style="width: 88%;"></div></div>
                 </div>
             </div>
+
+            <h3 style="margin-top: 40px; margin-bottom: 15px; font-size: 18px; color: var(--accent-cyan);">صندوق الأدوات // Toolkit</h3>
+            <div class="toolkit-grid">
+                <div class="tool-card"><i class="fas fa-terminal"></i>Termux</div>
+                <div class="tool-card"><i class="code fa-solid fa-code"></i>VS Code</div>
+                <div class="tool-card"><i class="fab fa-git-alt"></i>Git Tool</div>
+                <div class="tool-card"><i class="fas fa-laptop-code"></i>Postman</div>
+            </div>
         </div>
     </section>
 
@@ -620,7 +718,7 @@
                 <div class="pulse-indicator"></div>
                 <span>النظام نشط ومحمي بالكامل</span>
             </div>
-            <div class="status-item"><span>WIZZY OS v3.0 // Ping: 18ms</span></div>
+            <div class="status-item"><span>WIZZY OS v3.5 // Ping: 14ms</span></div>
         </div>
     </div>
 
