@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الملف الشخصي الاحترافي</title>
+    <title>WIZZY | الملف الشخصي السيبراني</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-main: #0b0f19;
-            --bg-card: #131a2c;
+            --bg-main: #060a13;
+            --bg-card: #0b1325;
             --accent-cyan: #00f2fe;
-            --accent-purple: #4facfe;
+            --accent-purple: #9b51e0;
+            --whatsapp-green: #25d366;
             --text-white: #ffffff;
-            --text-muted: #94a3b8;
+            --text-muted: #64748b;
         }
 
         * {
@@ -28,16 +30,16 @@
             overflow-x: hidden;
         }
 
-        /* الخلفية المضيئة المموّهة */
+        /* توهج الخلفية */
         .blur-bg {
             position: absolute;
-            top: -10%;
+            top: 10%;
             left: 50%;
             transform: translateX(-50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0,242,254,0.15) 0%, rgba(79,172,254,0) 70%);
-            filter: blur(80px);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0,242,254,0.1) 0%, rgba(155,81,224,0.05) 50%, rgba(0,0,0,0) 70%);
+            filter: blur(100px);
             z-index: -1;
         }
 
@@ -47,11 +49,11 @@
             margin: auto;
         }
 
-        /* الهيدر العصري */
+        /* الهيدر */
         header {
-            backdrop-filter: blur(12px);
-            background: rgba(11, 15, 25, 0.8);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            background: rgba(6, 10, 19, 0.85);
+            border-bottom: 1px solid rgba(0, 242, 254, 0.1);
             padding: 20px 0;
             position: sticky;
             top: 0;
@@ -65,197 +67,254 @@
         }
 
         .logo {
-            font-size: 22px;
-            font-weight: 800;
+            font-size: 24px;
+            font-weight: 900;
             background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
         nav a {
-            color: var(--text-muted);
+            color: #94a3b8;
             text-decoration: none;
             margin-right: 25px;
             font-size: 15px;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
 
         nav a:hover {
             color: var(--accent-cyan);
-            text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+            text-shadow: 0 0 8px rgba(0, 242, 254, 0.6);
         }
 
-        /* واجهة البطل الاحترافية */
-        .hero {
-            padding: 120px 0 80px;
-            text-align: center;
-            position: relative;
+        /* الواجهة الرئيسية */
+        .hero-section {
+            padding: 100px 0 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
         }
 
-        .hero h2 {
-            font-size: 48px;
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 45px;
             font-weight: 800;
+            line-height: 1.3;
             margin-bottom: 20px;
-            line-height: 1.2;
         }
 
-        .hero h2 span {
+        .hero-text h1 span {
             background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero p {
-            font-size: 18px;
-            color: var(--text-muted);
-            max-width: 650px;
-            margin: 0 auto 35px;
+        .hero-text p {
+            color: #94a3b8;
+            font-size: 17px;
             line-height: 1.8;
+            margin-bottom: 35px;
         }
 
-        .btn-grad {
-            background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
-            color: #000;
-            padding: 12px 35px;
-            border-radius: 50px;
+        /* مكان الصورة والتأثيرات المتوهجة المتطورة */
+        .hero-image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-img-wrapper {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            border-radius: 24px;
+            padding: 5px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.25);
+            animation: floatGlow 4s ease-in-out infinite alternate;
+        }
+
+        .profile-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            display: block;
+            border: 2px solid var(--bg-main);
+        }
+
+        /* خطوط ونبضات متوهجة متحركة حول الصورة */
+        .profile-img-wrapper::after {
+            content: '';
+            position: absolute;
+            top: -10px; left: -10px; right: -10px; bottom: -10px;
+            border-radius: 30px;
+            border: 2px dashed var(--accent-cyan);
+            opacity: 0.5;
+            animation: rotateLines 20s linear infinite;
+        }
+
+        @keyframes floatGlow {
+            0% {
+                transform: translateY(0) scale(1);
+                box-shadow: 0 0 25px rgba(0, 242, 254, 0.25), 0 0 50px rgba(155,81,224,0.1);
+            }
+            100% {
+                transform: translateY(-12px) scale(1.02);
+                box-shadow: 0 0 40px rgba(0, 242, 254, 0.5), 0 0 70px rgba(155,81,224,0.3);
+            }
+        }
+
+        @keyframes rotateLines {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* كروت التواصل السريعة والأزرار الرائعة */
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 14px 28px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 15px;
-            box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+            font-size: 16px;
             transition: all 0.3s ease;
-            display: inline-block;
+            border: 1px solid transparent;
         }
 
-        .btn-grad:hover {
+        .btn-whatsapp {
+            background: rgba(37, 211, 102, 0.1);
+            border-color: rgba(37, 211, 102, 0.3);
+            color: var(--whatsapp-green);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.1);
+        }
+
+        .btn-whatsapp:hover {
+            background: var(--whatsapp-green);
+            color: #000;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 242, 254, 0.5);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
         }
 
-        /* قسم المشاريع الفخم */
+        .btn-email {
+            background: rgba(0, 242, 254, 0.1);
+            border-color: rgba(0, 242, 254, 0.3);
+            color: var(--accent-cyan);
+            box-shadow: 0 4px 15px rgba(0, 242, 254, 0.1);
+        }
+
+        .btn-email:hover {
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 242, 254, 0.4);
+        }
+
+        /* قسم الخدمات والمشاريع المطور */
         .sections {
             padding: 80px 0;
         }
 
         .section-title {
             font-size: 32px;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 50px;
             text-align: center;
+            letter-spacing: 1px;
         }
 
         .section-title span {
             color: var(--accent-cyan);
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
         }
 
-        .projects-grid {
+        .grid-layout {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .project-card {
+        .cyber-card {
             background: var(--bg-card);
             border: 1px solid rgba(255, 255, 255, 0.03);
-            border-radius: 16px;
-            padding: 30px;
+            border-radius: 18px;
+            padding: 35px;
             position: relative;
-            overflow: hidden;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .project-card::before {
+        .cyber-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(0, 242, 254, 0.03));
-            z-index: 1;
+            top: 0; left: 0; width: 3px; height: 0;
+            background: var(--accent-cyan);
+            transition: all 0.4s ease;
         }
 
-        .project-card:hover {
+        .cyber-card:hover {
             transform: translateY(-8px);
-            border-color: rgba(0, 242, 254, 0.3);
-            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.05);
+            border-color: rgba(0, 242, 254, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 242, 254, 0.05);
         }
 
-        .project-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: var(--text-white);
-            font-weight: 600;
+        .cyber-card:hover::before {
+            height: 100%;
         }
 
-        .project-card p {
-            color: var(--text-muted);
-            font-size: 14px;
-            line-height: 1.6;
+        .cyber-card i {
+            font-size: 30px;
+            color: var(--accent-cyan);
             margin-bottom: 20px;
         }
 
-        .project-link {
-            color: var(--accent-cyan);
-            text-decoration: none;
+        .cyber-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .cyber-card p {
+            color: #94a3b8;
             font-size: 14px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: opacity 0.2s;
-        }
-
-        .project-link:hover {
-            opacity: 0.8;
-        }
-
-        /* قسم المهارات كـ كبسولات مضيئة */
-        .skills-container {
-            background: rgba(19, 26, 44, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.02);
-            padding: 40px;
-            border-radius: 24px;
-            backdrop-filter: blur(10px);
-        }
-
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .skill-badge {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            color: #e2e8f0;
-            padding: 10px 24px;
-            border-radius: 100px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .skill-badge:hover {
-            background: rgba(0, 242, 254, 0.05);
-            border-color: var(--accent-cyan);
-            color: var(--accent-cyan);
-            transform: scale(1.05);
+            line-height: 1.7;
         }
 
         footer {
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding: 30px 0;
             text-align: center;
-            color: var(--text-muted);
-            font-size: 13px;
+            color: #475569;
+            font-size: 14px;
         }
 
-        /* ريبونسيف للموبايل */
-        @media (max-width: 768px) {
-            .hero h2 { font-size: 34px; }
+        /* الموبايل */
+        @media (max-width: 900px) {
+            .hero-section {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 60px;
+            }
+            .profile-img-wrapper {
+                width: 260px;
+                height: 260px;
+            }
+            .hero-text h1 { font-size: 32px; }
             header .container { flex-direction: column; gap: 15px; }
             nav a { margin: 0 10px; }
-            .project-card { padding: 20px; }
         }
     </style>
 </head>
@@ -265,69 +324,70 @@
 
     <header>
         <div class="container">
-            <div class="logo">WIZZY . DEV</div>
+            <div class="logo">MIDO // SYSTEM</div>
             <nav>
                 <a href="#about">الرئيسية</a>
-                <a href="#projects">المشاريع</a>
-                <a href="#skills">المهارات</a>
+                <a href="#services">الخدمات</a>
+                <a href="#contact">اتصال</a>
             </nav>
         </div>
     </header>
 
-    <section class="hero" id="about">
-        <div class="container">
-            <h2>مرحباً بك، أنا <span>مطوّر برمجيات ومصمم ويب</span></h2>
-            <p>أقوم بتحويل الأفكار المعقدة إلى تطبيقات ذكية، أدوات أتمتة متكاملة، وواجهات مستخدم فريدة ومبهرة بصرياً.</p>
-            <a href="mailto:your-email@example.com" class="btn-grad">تواصل معي فوراً</a>
-        </div>
-    </section>
-
-    <section class="sections" id="projects">
-        <div class="container">
-            <h2 class="section-title">أبرز <span>المشاريع</span></h2>
-            <div class="projects-grid">
+    <section class="container hero-section" id="about">
+        <div class="hero-text">
+            <h1>مرحباً، أنا <span>مطوّر الأنظمة وبوتات الأتمتة</span></h1>
+            <p>أهلاً بك في نظامي الخاص. أنا مبرمج متخصص في تصميم وبناء الحلول الرقمية المتقدمة، وبرمجة سكربتات الأتمتة الذكية وتطوير واجهات المستخدم السيبرانية فائقة الأداء والتفاعل.</p>
+            
+            <div class="contact-buttons" id="contact">
+                <a href="https://wa.me/249128749239?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%8A%D8%AF%D9%84%D9%84%D9%88%D8%8C%20%D9%84%D9%82%D8%AF%20%D8%B2%D8%B1%D8%AA%20%D9%85%D9%85%D9%84%D9%83%D8%AA%D9%83%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A%D8%A9%20%D9%88%D8%A3%D9%88%D8%AF%20%D9%85%D9%86%D8%A7%D9%82%D8%B4%D8%A9%20%D9%85%D8%B4%D8%B1%D9%84%D9%88%D8%B9%20%D9%85%D8%B9%D9%83." target="_blank" class="btn-contact btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>تواصل معي عبر واتساب مجاناً</span>
+                </a>
                 
-                <div class="project-card">
-                    <h3>أتمتة وبوتات ذكية</h3>
-                    <p>تطوير سكربتات وأنظمة أتمتة متكاملة لإدارة المنصات الرقمية وربط واجهات الـ API لتقديم حلول فورية وتلقائية.</p>
-                    <a href="#" class="project-link">استكشف الكود ←</a>
-                </div>
+                <a href="mailto:ffjjddsskkjj78@gmail.com?subject=طلب%20خدمة%20برمجية" class="btn-contact btn-email">
+                    <i class="far fa-envelope"></i>
+                    <span>ffjjddsskkjj78@gmail.com</span>
+                </a>
+            </div>
+        </div>
 
-                <div class="project-card">
-                    <h3>تطبيقات ويب متجاوبة</h3>
-                    <p>بناء واجهات مستخدم مخصصة بأعلى معايير السرعة والأمان، متوافقة تماماً مع شاشات الهواتف والكمبيوتر.</p>
-                    <a href="#" class="project-link">استكشف الكود ←</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>أنظمة إدارة البيانات</h3>
-                    <p>تصميم قواعد بيانات متطورة وسكربتات معالجة سريعة تساهم في تسريع ورفع كفاءة بيئات العمل البرمجية.</p>
-                    <a href="#" class="project-link">استكشف الكود ←</a>
-                </div>
-
+        <div class="hero-image-container">
+            <div class="profile-img-wrapper">
+                <img src="https://i.ibb.co/Sw8y2gNN/1781032539846.jpg" alt="Mido Profile">
             </div>
         </div>
     </section>
 
-    <section class="sections" id="skills">
+    <section class="sections" id="services">
         <div class="container">
-            <div class="skills-container">
-                <h2 class="section-title" style="margin-bottom: 30px;">الأسلحة <span>التقنية</span></h2>
-                <div class="skills-grid">
-                    <span class="skill-badge">HTML5 / CSS3</span>
-                    <span class="skill-badge">JavaScript (ES6+)</span>
-                    <span class="skill-badge">Python Scripts</span>
-                    <span class="skill-badge">Node.js</span>
-                    <span class="skill-badge">Git & GitHub</span>
-                    <span class="skill-badge">API Rest / Integrations</span>
+            <h2 class="section-title">القدرات <span>البرمجية</span></h2>
+            <div class="grid-layout">
+                
+                <div class="cyber-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>أتمتة وبوتات ذكية</h3>
+                    <p>بناء وتطوير بوتات ذكية لمنصات التليجرام والواتساب لتسهيل وادارة المبيعات والخدمات البرمجية تلقائياً 100% وبدون تدخل بشري.</p>
                 </div>
+
+                <div class="cyber-card">
+                    <i class="fas fa-code"></i>
+                    <h3>تطوير الواجهات المتفوقة</h3>
+                    <p>تصميم واجهات الويب الفريدة والمستقبلية (Cyber-Tech) لتعطي المستخدم تجربة تصفح سريعة، مذهلة وبصمة بصرية لا تُنسى.</p>
+                </div>
+
+                <div class="cyber-card">
+                    <i class="fas fa-terminal"></i>
+                    <h3>سكربتات مخصصة (Python)</h3>
+                    <p>كتابة أكواد وسكربتات متكاملة لمعالجة وتصفية البيانات المعقدة، وربط واجهات الـ APIs المتعددة بكفاءة وجودة عالية.</p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>تم التطوير بكل شغف برمجياً © 2026</p>
+            <p>WIZZY OPERATING SYSTEM // تم التطوير بكل شغف برمجياً سيبراني © 2026</p>
         </div>
     </footer>
 
